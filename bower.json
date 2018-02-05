@@ -1,0 +1,22 @@
+{
+  "name": "appsemplice",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Francesco Randazzo <fg.randazzo@hotmail.it>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.8",
+    "angular-route": "^1.6.8",
+    "bootstrap": "^4.0.0"
+  }
+}
