@@ -1,6 +1,5 @@
-app.controller("controllerpagina1", function($scope, $http, $location){
+app.controller("controllerpagina1", function($scope, $http, $location, exampleService){
 	$scope.helloworld = "Benvenuto nella Pagina 1";
-
 
 
 
@@ -18,24 +17,12 @@ app.controller("controllerpagina1", function($scope, $http, $location){
 
 			}
 
+			var promise = exampleService.comando1(complexObject);
 
-			var req = {
-			 method: 'POST',
-			 url: 'https://rocky-stream-78333.herokuapp.com/api/test',
-			 headers: {
-			   'Content-Type': 'application/json',
-			   'x-auth': localStorage.getItem('token')
-			 },
-			 data: { "test":complexObject}
-			}
-
-
-			$http(req)
+			promise
 			.then(function(response){
-				var data = response.data;
-
 				alert("ok");
-				console.log(data);
+				console.log(response);
 			},
 			function(error){
 
@@ -52,17 +39,5 @@ app.controller("controllerpagina1", function($scope, $http, $location){
 
 
 	}
-
-		// function init(){
-
-		// 	if (!localStorage.getItem('token')){
-		// 		 $location.path('/login');
-		// 	}
-
-
-		// }
-
-
-		// init();
 
 });
